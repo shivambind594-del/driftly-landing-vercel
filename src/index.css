@@ -1,0 +1,154 @@
+:root {
+  --bg: #EEF0EA;
+  --bg-panel: #FFFFFF;
+  --ink: #1C2320;
+  --ink-soft: #4A554E;
+  --line: #D8DCD1;
+  --accent: #E85D2F;
+  --accent-ink: #FFFFFF;
+  --forest: #2F5D45;
+  --forest-soft: #E4EDE7;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --max-width: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .serif {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, background 0.15s ease;
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background: var(--accent);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ink);
+}
+
+section {
+  padding: 96px 0;
+}
+
+@media (max-width: 720px) {
+  section {
+    padding: 64px 0;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.pricing-grid li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--forest);
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .features-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.nav-menu-btn {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .nav-desktop,
+  .nav-actions {
+    display: none !important;
+  }
+  .nav-menu-btn {
+    display: flex !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
